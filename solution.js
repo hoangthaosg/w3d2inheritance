@@ -28,7 +28,8 @@ let employee = Object.setPrototypeOf(person, {
     salary: 0,
     hireDate: new Date(),
     doJob: function(jobTitle) {
-        console.log(this.getName(), 'is a', jobTitle, 'who earns $', this.salary)
+        console.log(this.getName(), 'is a', jobTitle, 'who earns ', 
+        new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', currencyDisplay: 'narrowSymbol'}).format(this.salary))
     }
 }); 
 
